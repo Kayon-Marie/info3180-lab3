@@ -7,7 +7,12 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from .forms import ContactForm
+from flask_wtf.csrf import CSRFProtect
 
+### CSRF Protection
+csrf = CSRFProtect(app)
+csrf.init_app(app)
 
 ###
 # Routing for your application.
@@ -25,6 +30,18 @@ def about():
     return render_template('about.html', name="Mary Jane")
 
 
+@app.route('/contact/', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    return render_template('contact.html', form=form)
+    # if request.method == 'POST':
+    #     if form.validate() == False:
+    #         flash('All fields are required.')
+    #         return render_template('contact.html', form=form)
+    #     else:
+    #         return render_template()
+    #     elif reque
+    # return render_template('contact.html')
 
 ###
 # The functions below should be applicable to all Flask apps.
