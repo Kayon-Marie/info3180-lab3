@@ -6,27 +6,27 @@
     <form action="{{ url_for('contact') }}" method="post">
         {{ form.csrf_token }}
         <div class="form-group">
-            {{form.name.label}}
+            {{form.name.label(class="label")}}
             <p>Please enter your full name</p>
-            {{form.name}}
+            {{form.name(class="input")}}
         </div>
         <div class="form-group">
-            {{form.email.label}}
+            {{form.email.label(class="label")}}
             <p>Please enter your e-mail address</p>
-            {{form.email}}
+            {{form.email(class="input")}}
         </div>
         <div class="form-group">
-            {{form.subject.label}}
+            {{form.subject.label(class="label")}}
             <p>Please enter the subject for your message.</p>
-            {{form.subject}}
+            {{form.subject(class="input")}}
         </div>
         <div class="form-group">
-            {{form.message.label}}
+            {{form.message.label(class="label")}}
             <p>Please enter the message you would like to send.</p>
-            {{form.message}}
+            {{form.message(class="message")}}
         </div>
         <div class="form-group">
-            {{form.submit}}
+            {{form.submit(class="button")}}
         </div>
     </form>
 {% endblock %}
