@@ -13,7 +13,11 @@ h1{
     font-weight: bold;
 }
 
-.form-group p{
+.f-group{
+    margin-bottom: 15px;
+}
+
+.f-group p{
     font-size: 12px;
 }
 
@@ -21,18 +25,16 @@ p{
     font-size: 10px;
 }
 
-.input{
+input{
     width: 250px;
-    border-radius: 5px;
 }
 
-.message{
+textarea{
     width: 350px;
     height: 100px;
-    border-radius: 5px;
 }
 
-.button{
+input[type=submit]{
     color: #fff;
     background-color: #2980b9;
     border: none;
